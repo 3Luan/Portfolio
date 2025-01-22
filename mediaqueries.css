@@ -1,102 +1,146 @@
 @media screen and (max-width: 1400px) {
-  #profile {
-    height: 83vh;
-    margin-bottom: 6rem;
+  body {
+    margin-left: 300px;
+    margin-right: 300px;
   }
+
+  #desktop-nav {
+    padding-right: 300px;
+  }
+
   .about-containers {
     flex-wrap: wrap;
   }
-  #contact,
-  #projects {
-    height: fit-content;
-  }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1300px) {
+  body {
+    margin-left: 150px;
+    margin-right: 150px;
+  }
+
   #desktop-nav {
-    display: none;
+    padding-right: 150px;
   }
-  #hamburger-nav {
-    display: flex;
-  }
-  #experience,
-  .experience-details-container {
-    margin-top: 2rem;
-  }
-  #profile,
-  .section-container {
-    display: block;
-  }
+
   .arrow {
     display: none;
   }
+
   section,
   .section-container {
     height: fit-content;
   }
+
   section {
     margin: 0 5%;
   }
-  .section__pic-container {
-    width: 275px;
-    height: 275px;
-    margin: 0 auto 2rem;
-  }
+
   .about-containers {
     margin-top: 0;
   }
 }
 
-@media screen and (max-width: 600px) {
-  #contact,
-  footer {
-    height: 40vh;
+@media screen and (max-width: 1120px) {
+  body {
+    margin-left: 40px;
+    margin-right: 40px;
   }
-  #profile {
-    height: 83vh;
-    margin-bottom: 0;
+
+  #desktop-nav {
+    padding-right: 100px;
   }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  #desktop-nav {
+    padding-right: 0px;
+    margin: 0 5%;
+  }
+
+  #desktop-nav {
+    display: none;
+  }
+
+  #hamburger-nav {
+    display: flex;
+  }
+
   article {
     font-size: 1rem;
   }
+
   footer nav {
     height: fit-content;
     margin-bottom: 2rem;
   }
+
   .about-containers,
   .contact-info-upper-container,
   .btn-container {
     flex-wrap: wrap;
   }
+
   .contact-info-container {
     margin: 0;
   }
+
   .contact-info-container p,
   .nav-links li a {
     font-size: 1rem;
   }
+
   .experience-sub-title {
     font-size: 1.25rem;
   }
+
   .logo {
     font-size: 1.5rem;
   }
+
   .nav-links {
     flex-direction: column;
     gap: 0.5rem;
     text-align: center;
   }
-  .section__pic-container {
-    width: auto;
-    height: 46vw;
-    justify-content: center;
+
+  #profile,
+  .section-container {
+    display: block;
   }
+
+  .section__pic-container {
+    display: flex;
+    height: 200px;
+    width: 200px;
+    margin: 0 auto 10px;
+  }
+
+  .section__pic-container img {
+    min-width: 200px;
+    min-height: 200px;
+    border-radius: 2rem;
+    object-fit: cover;
+  }
+
   .section__text__p2 {
     font-size: 1.25rem;
   }
+
   .title {
-    font-size: 2rem;
+    text-align: center;
   }
+
+  .name {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
   .text-container {
     text-align: justify;
   }
