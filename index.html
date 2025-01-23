@@ -13,59 +13,81 @@
     <nav id="desktop-nav">
       <div>
         <ul class="nav-links">
-          <li><a href="#profile">About</a></li>
-          <li><a href="#activities">Activities</a></li>
-          <li><a href="#technical_skills">Technical Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
+          <li><a class="text_about" href="#profile">About</a></li>
+          <li><a class="text_activities" href="#activities">Activities</a></li>
           <li>
-            <img src="/assets/dark.png" alt="Night" class="nav-image" />
+            <a class="text_technical_skills" href="#technical_skills"
+              >Technical Skills</a
+            >
           </li>
-          <li>
-            <img src="/assets/vietnam.png" alt="Language" class="nav-image" />
+          <li><a class="text_projects" href="#projects">Projects</a></li>
+          <li onclick="toggleTheme()">
+            <img
+              src="/assets/dark.png"
+              alt="Theme"
+              class="nav-image image-theme theme-img"
+            />
+          </li>
+          <li onclick="toggleLanguage()">
+            <img
+              src="/assets/vietnam.png"
+              alt="Language"
+              class="nav-image language-img"
+            />
           </li>
         </ul>
       </div>
     </nav>
-    <nav id="hamburger-nav">
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="menu-links">
-          <li><a href="#profile" onclick="toggleMenu()">About</a></li>
-          <li><a href="#activities" onclick="toggleMenu()">Activities</a></li>
-          <li>
-            <a href="#technical_skills" onclick="toggleMenu()"
+
+    <nav id="hamburger-nav" class="hehe">
+      <div class="nav__hamburger" onclick="toggleHamburgerMenu()">
+        <span class="nav__hamburger__line"></span>
+        <span class="nav__hamburger__line"></span>
+        <span class="nav__hamburger__line"></span>
+      </div>
+      <div class="nav__menu">
+        <ul>
+          <li class="nav__menu__link">
+            <a
+              class="text_about"
+              href="#profile"
+              onclick="toggleHamburgerMenu()"
+              >About</a
+            >
+          </li>
+          <li class="nav__menu__link">
+            <a class="text_activities" href="#activities">Activities</a>
+          </li>
+          <li class="nav__menu__link">
+            <a class="text_technical_skills" href="#technical_skills"
               >Technical Skills</a
             >
           </li>
-          <li>
-            <a href="#projects" onclick="toggleMenu()">Projects</a>
+          <li class="nav__menu__link">
+            <a class="text_projects" href="#projects">Projects</a>
           </li>
-          <li>
+          <li onclick="toggleTheme()" class="nav__menu__link">
             <img
               src="/assets/dark.png"
-              alt="Night"
-              class="hamburger-nav-image"
+              alt="Theme"
+              class="image-theme theme-img"
             />
           </li>
-          <li>
+          <li onclick="toggleLanguage()" class="nav__menu__link">
             <img
               src="/assets/vietnam.png"
               alt="Language"
-              class="hamburger-nav-image"
+              class="language-img image-lang"
             />
           </li>
-        </div>
+        </ul>
       </div>
     </nav>
     <div id="progressbar"></div>
     <div id="scrollPath"></div>
     <section id="profile">
       <div class="section__pic-container">
-        <img src="./assets/image1.png" alt="Nguyen Thanh Luan" />
+        <img src="./assets/Luan.png" alt="Nguyen Thanh Luan" />
         <div class="info">
           <p>Phone: 0961819210</p>
           <p>Email: luanthanhnguyen404@gmail.com</p>
@@ -80,7 +102,7 @@
 
       <div class="section__text">
         <!-- <p class="section__text__p1">Hello, I'm</p> -->
-        <h1 class="name">Nguyễn Thành Luân</h1>
+        <h1 id="text_name" class="name">Nguyen Thanh Luan</h1>
         <!-- <p class="section__text__p2">Fullstack Developer</p> -->
         <!-- <div class="btn-container">
           <button
@@ -107,117 +129,76 @@
             onclick="location.href='https://github.com/'"
           />
         </div> -->
-        <p>
-          As an Information Technology student, I am passionate about and aim to
-          build a career as a full-stack developer. I aspire to apply my
-          knowledge to contribute to the company while gaining practical
-          experience, enhancing my expertise, and improving teamwork skills.As
-          an Information Technology student, I am passionate about and aim to
-          build a career as a full-stack developer. I aspire to apply my
-          knowledge to contribute to the company while gaining practical
-          experience, enhancing my expertise, and improving teamwork skills.As
-          an Information Technology student, I am passionate about and aim to
-          build a career as a full-stack developer. I aspire to apply my
-          knowledge to contribute to the company while gaining practical
-          experience, enhancing my expertise, and improving teamwork skills.
+        <p id="text_about_content">
+          My name is Nguyen Thanh Luan, Currently, I’m a fourth-year student
+          majoring in Information Technology at the University of Transport and
+          Communications - Campus in Ho Chi Minh City (UTC2). I am particularly
+          interested in web application development, with a strong focus on
+          Backend development and Frontend logic handling. Additionally, I
+          explore and apply machine learning knowledge to my personal projects.
+          My goal is to gain more practical experience, enhance my expertise,
+          and improve my teamwork skills, ultimately aiming to become a
+          Full-stack developer in the future.
         </p>
       </div>
     </section>
-    <!-- <section id="about">
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>2+ years <br />Frontend Development</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>B.Sc. Bachelors Degree<br />M.Sc. Masters Degree</p>
-            </div>
-          </div>
-          <div class="text-container">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-              reprehenderit et laborum, rem, dolore eum quod voluptate
-              exercitationem nobis, nihil esse debitis maxime facere minus sint
-              delectus velit in eos quo officiis explicabo deleniti dignissimos.
-              Eligendi illum libero dolorum cum laboriosam corrupti quidem,
-              reiciendis ea magnam? Nulla, impedit fuga!
-            </p>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
     <section id="activities">
-      <h1 class="title">Activities</h1>
-      <div class="">
-        <div class="skill-containers">
-          <h1 class="title_1">Programming Skills:</h1>
-          <p>JavaScript,</p>
-          <p>Java,</p>
-          <p>C++,</p>
-          <p>Python,</p>
-          <p>NodeJS,</p>
-          <p>Algorithms & Data Structures</p>
+      <h1 class="title text_activities">Activities</h1>
+      <div class="activities-container">
+        <div class="activity">
+          <h1 class="time">2024-2025</h1>
+          <p id="content_activity3" class="activity-title">
+            Currently participating in student scientific research at UTC2
+            University
+          </p>
         </div>
-        <div class="skill-containers">
-          <h1 class="title_1">Frameworks & Libraries:</h1>
-          <p>ReactJS,</p>
-          <p>ExpressJS</p>
+        <div class="activity">
+          <h1 class="time">2024</h1>
+          <p id="content_activity2" class="activity-title">
+            Participated in UTC2 University's Olympic in Informatics competition
+          </p>
+        </div>
+        <div class="activity">
+          <h1 class="time">2023-2024</h1>
+          <p id="content_activity1" class="activity-title">
+            Participated in and completed the student scientific research at
+            UTC2 University.
+          </p>
         </div>
       </div>
     </section>
+
     <section id="technical_skills">
-      <h1 class="title">Technical Skills</h1>
-      <div class="">
-        <div class="skill-containers">
-          <h1 class="title_1">Programming Skills:</h1>
-          <p>JavaScript,</p>
-          <p>Java,</p>
-          <p>C++,</p>
-          <p>Python,</p>
-          <p>NodeJS,</p>
-          <p>Algorithms & Data Structures</p>
+      <h1 class="title text_technical_skills">Technical Skills</h1>
+      <div class="skills-container">
+        <div class="skill">
+          <h1 class="skill-name">Programming Skills:</h1>
+          <p class="skill-title">
+            JavaScript, Java, C++, Python, NodeJS, Algorithms & Data Structures
+          </p>
         </div>
-        <div class="skill-containers">
-          <h1 class="title_1">Frameworks & Libraries:</h1>
-          <p>ReactJS,</p>
-          <p>ExpressJS</p>
+        <div class="skill">
+          <h1 class="skill-name">Frameworks & Libraries:</h1>
+          <p class="skill-title">ReactJS, ExpressJS</p>
         </div>
-        <div class="skill-containers">
-          <h1 class="title_1">Databases:</h1>
-          <p>MySQL,</p>
-          <p>SQLServer,</p>
-          <p>MongoDB,</p>
+
+        <div class="skill">
+          <h1 class="skill-name">Databases:</h1>
+          <p class="skill-title">MySQL, SQLServer, MongoDB</p>
         </div>
-        <div class="skill-containers">
-          <h1 class="title_1">Tools & APIs:</h1>
-          <p>RESTful API,</p>
-          <p>WebSocket,</p>
-          <p>GitHub,</p>
-          <p>Postman</p>
+        <div class="skill">
+          <h1 class="skill-name">Tools & APIs:</h1>
+          <p class="skill-title">RESTful API, WebSocket, GitHub, Postman</p>
         </div>
-        <div class="skill-containers">
-          <h1 class="title_1">Languages:</h1>
-          <p>English (Intermediate)</p>
+        <div class="skill">
+          <h1 class="skill-name">Languages:</h1>
+          <p class="skill-title">English (Intermediate)</p>
         </div>
       </div>
     </section>
+
     <section id="projects">
-      <h1 class="title">Projects</h1>
+      <h1 class="title text_projects">Projects</h1>
       <div class="slider-container">
         <button class="prev-btn">&#10094;</button>
         <div class="project-slide">
@@ -226,17 +207,17 @@
             alt="Project 1"
             class="project-img"
           />
-          <h2 class="project-title">Website Social UTC2</h2>
+          <p class="project-title">Website Social UTC2</p>
           <div class="btn-container">
             <button
               class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/'"
+              onclick="window.open('https://github.com/3Luan/UTC2_Social.git', '_blank')"
             >
               Github
             </button>
             <button
               class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/'"
+              onclick="window.open('https://socialutc2.vercel.app', '_blank')"
             >
               Live Demo
             </button>
@@ -248,39 +229,17 @@
             alt="Project 2"
             class="project-img"
           />
-          <h2 class="project-title">Library Management</h2>
+          <p class="project-title">Library Management</p>
           <div class="btn-container">
             <button
               class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/'"
+              onclick="window.open('https://github.com/3Luan/QuanLyThuVien', '_blank')"
             >
               Github
             </button>
             <button
               class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/'"
-            >
-              Live Demo
-            </button>
-          </div>
-        </div>
-        <div class="project-slide">
-          <img
-            src="./assets/project-3.png"
-            alt="Project 3"
-            class="project-img"
-          />
-          <h2 class="project-title">App UTC2</h2>
-          <div class="btn-container">
-            <button
-              class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/'"
-            >
-              Github
-            </button>
-            <button
-              class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/'"
+              onclick="window.open('https://github.com/3Luan/QuanLyThuVien', '_blank')"
             >
               Live Demo
             </button>

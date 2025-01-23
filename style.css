@@ -21,6 +21,121 @@ p {
   color: rgb(85, 85, 85);
 }
 
+/* Change Theme */
+
+/* Chế độ sáng (light mode) */
+body.light-mode {
+  background-color: white;
+  color: black;
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+body.light-mode a:hover {
+  text-decoration-color: rgb(7, 0, 100);
+}
+
+body.light-mode p,
+body.light-mode a,
+body.light-mode button,
+body.light-mode .time,
+body.light-mode .skill-name {
+  color: rgb(7, 0, 100);
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+body.light-mode #desktop-nav {
+  background-color: white;
+  color: black; /* Màu chữ khi chế độ sáng */
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+body.light-mode .nav__hamburger__line {
+  background-color: #1c1c1c;
+}
+
+body.light-mode .nav__menu {
+  background-color: white;
+  color: black; /* Màu chữ khi chế độ sáng */
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+body.light-mode #progressbar {
+  background: rgba(51, 51, 51, 0.16);
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+body.light-mode #scrollPath {
+  background: rgb(13, 0, 200);
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+body.light-mode .title {
+  border-bottom: 2px solid rgba(51, 51, 51, 0.16);
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+body.light-mode .image-theme {
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+/* Chế độ tối (dark mode) */
+body.dark-mode {
+  background-color: #1c1c1c;
+  color: white;
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+body.dark-mode p,
+body.dark-mode #hamburger-nav,
+body.dark-mode a,
+body.dark-mode button,
+body.dark-mode .time,
+body.dark-mode .skill-name {
+  color: white;
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+body.dark-mode a:hover {
+  text-decoration-color: white;
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+body.dark-mode .nav__hamburger__line {
+  background-color: white;
+}
+
+body.dark-mode .nav__menu {
+  background-color: #1c1c1c;
+  color: black; /* Màu chữ khi chế độ sáng */
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+body.dark-mode #desktop-nav {
+  background-color: #1c1c1c;
+  color: white;
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+body.dark-mode #progressbar {
+  background: rgba(200, 200, 200, 0.3);
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+body.dark-mode #scrollPath {
+  background: white;
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+body.dark-mode .title {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+body.dark-mode .image-theme {
+  filter: invert(1) brightness(2);
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
 /* TRANSITION */
 
 a,
@@ -29,16 +144,15 @@ a,
 }
 
 /* DESKTOP NAV */
-
 #desktop-nav {
   position: fixed;
   width: 100%;
   z-index: 999;
-  background-color: white;
-  justify-content: right;
   justify-content: flex-end;
   right: 0;
   padding-right: 350px;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  background-color: white;
 }
 
 nav,
@@ -64,6 +178,15 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 22px;
+  width: 22px;
+  cursor: pointer;
+}
+
+.image-theme {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 25px;
   width: 25px;
   cursor: pointer;
@@ -76,112 +199,106 @@ a {
 }
 
 a:hover {
-  color: grey;
+  color: rgb(7, 0, 100);
   text-decoration: underline;
-  text-underline-offset: 1rem;
-  text-decoration-color: rgb(181, 181, 181);
+  text-underline-offset: 0.5rem;
+  text-decoration-color: rgb(7, 0, 100);
 }
-
-/* .logo {
-  font-size: 2rem;
-}
-
-.logo:hover {
-  cursor: default;
-} */
 
 /* HAMBURGER MENU */
-
 #hamburger-nav {
+  /* background: black; Màu nền của thanh điều hướng */
   display: none;
-  position: fixed;
-  width: 100vw;
-  z-index: 999;
-  background-color: white;
+  position: fixed; /* Cố định vị trí thanh điều hướng */
+  top: 0; /* Đặt thanh điều hướng ở đầu trang */
+  left: 0;
+  width: 100%; /* Chiều rộng bao phủ toàn bộ màn hình */
+  z-index: 1000; /* Đặt z-index cao để đảm bảo nó nằm trên các phần tử khác */
 }
 
-.hamburger-menu {
-  position: relative;
-  display: inline-block;
-  margin-right: 50px; /* Khoảng cách từ viền bên phải */
-}
-
-.hamburger-icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 24px;
+/* Nút hamburger */
+.nav__hamburger {
   width: 30px;
-  cursor: pointer;
-}
-
-.hamburger-icon span {
-  width: 100%;
-  height: 2px;
-  background-color: black;
-  transition: all 0.3 ease-in-out;
-}
-
-.hamburger-nav-image {
+  height: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 50px;
-  width: 50px;
+  justify-content: space-around;
   cursor: pointer;
+  z-index: 1001; /* Đặt z-index cao hơn nav để dễ bấm */
+  position: fixed; /* Nút hamburger cố định trên màn hình */
+  top: 15px; /* Vị trí cách trên cùng một khoảng */
+  right: 15px; /* Vị trí cách phải một khoảng */
 }
 
-.menu-links {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: white;
-  width: fit-content;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.3 ease-in-out;
+/* Các dòng của nút hamburger */
+.nav__hamburger__line {
+  height: 3px;
+  width: 100%;
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
-.menu-links a {
-  display: block;
-  padding: 10px;
-  text-align: center;
-  font-size: 1.5rem;
-  color: black;
-  text-decoration: none;
-  transition: all 0.3 ease-in-out;
+.nav__menu {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  padding-top: 8vh;
 }
 
-.menu-links li {
+.nav__menu.active {
+  top: 0;
+}
+
+.nav__menu ul {
   list-style: none;
+  margin: 0;
+  padding: 1rem 0;
+  text-align: center;
 }
 
-.menu-links.open {
-  max-height: 600px;
+.nav__menu__link {
+  display: flex; /* Sử dụng flexbox */
+  justify-content: center; /* Canh giữa theo chiều ngang */
+  align-items: center; /* Canh giữa theo chiều dọc */
+  height: 100%; /* Đảm bảo phần tử có chiều cao đủ để căn giữa */
+  padding-bottom: 3px;
 }
 
-.hamburger-icon.open span:first-child {
-  transform: rotate(45deg) translate(10px, 5px);
+.nav__menu__link .image-theme {
+  width: 50px;
+  height: 50px;
 }
 
-.hamburger-icon.open span:nth-child(2) {
+.nav__menu__link .image-lang {
+  width: 43px;
+  height: 43px;
+}
+
+.nav__menu__link a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+.nav__menu__link a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.nav__hamburger.active .nav__hamburger__line:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.nav__hamburger.active .nav__hamburger__line:nth-child(2) {
   opacity: 0;
 }
 
-.hamburger-icon.open span:last-child {
-  transform: rotate(-45deg) translate(10px, -5px);
-}
-
-.hamburger-icon span:first-child {
-  transform: none;
-}
-
-.hamburger-icon span:first-child {
-  opacity: 1;
-}
-
-.hamburger-icon span:first-child {
-  transform: none;
+.nav__hamburger.active .nav__hamburger__line:nth-child(3) {
+  transform: rotate(-50deg) translate(3px, -5px);
 }
 
 /* PROGRESSBAR */
@@ -192,7 +309,6 @@ a:hover {
   left: 0;
   right: 0;
   height: 1px;
-  /* background: rgba(250, 250, 250, 0.05); */
   background: rgba(51, 51, 51, 0.16);
   z-index: 997;
 }
@@ -202,8 +318,8 @@ a:hover {
   position: fixed;
   top: calc(8vh);
   left: 0;
-  height: 2.5px;
-  background: #008aff;
+  height: 2px;
+  background: rgb(13, 0, 200);
 }
 
 @keyframes animate {
@@ -219,9 +335,6 @@ a:hover {
 /* SECTIONS */
 
 section {
-  /* padding-top: 4vh; */
-  /* height: 96vh; */
-  /* margin: 0 10rem; */
   box-sizing: border-box;
   min-height: fit-content;
 }
@@ -236,42 +349,33 @@ section {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  /* height: 80vh; */
   padding-top: 12vh;
 }
 
 .name {
-  padding-bottom: 5px;
   font-size: 2rem;
 }
 
 .section__pic-container {
   min-width: 285px;
-  min-height: 285px;
-
+  min-height: 300px;
   display: flex;
   flex-direction: column; /* Sắp xếp theo chiều dọc */
   align-items: center; /* Căn giữa nội dung theo chiều ngang */
   width: 285px;
-  height: 285px;
+  height: 300px;
+  margin-bottom: 10vh;
 }
 
 .section__pic-container img {
   height: 100%;
   width: 100%;
-  /* min-width: 250px; */
-  /* min-height: 250px; */
   border-radius: 2rem;
   object-fit: cover;
 }
 
 .section__text p {
-  /* flex-direction: column; */
-  /* align-self: center; */
-  /* text-align: justify; */
-  /* max-width: 200px; */
   font-size: 0.9rem;
-  /* text-indent: 30px; //thụt lề đầu đoạn văn */
 }
 
 .info {
@@ -281,11 +385,7 @@ section {
 .info p {
   font-size: 0.85rem; /* Kích thước chữ */
   font-weight: 500; /* Độ đậm của chữ */
-  color: #333; /* Màu chữ */
-}
-
-.section__text p {
-  font-weight: 600;
+  color: rgb(7, 0, 100); /* Màu chữ */
 }
 
 .section__text__p1 {
@@ -316,14 +416,14 @@ section {
 .btn-container {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  /* gap: 1rem; */
 }
 
 .btn {
   font-weight: 600;
   transition: all 300ms ease;
   padding: 1rem;
-  width: 8rem;
+  min-width: 6rem;
   border-radius: 1rem;
 }
 
@@ -409,14 +509,41 @@ section {
 
 .title {
   font-size: 1.5rem;
-  border-bottom: 2px solid rgb(163, 163, 163);
+  border-bottom: 2px solid rgba(51, 51, 51, 0.16);
+  padding-bottom: 5px;
 }
 
-/* Technical Skills */
+/* Activities */
 
 #activities {
-  position: relative;
   padding-top: 12vh;
+}
+
+.activities-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding-left: 15px;
+  padding-top: 10px;
+}
+
+.activity {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.time {
+  font-weight: bold;
+  font-size: 1rem;
+  min-width: 100px; /* Để căn chỉnh thời gian thẳng hàng */
+  color: rgb(64, 64, 64);
+  text-align: left;
+}
+
+.activity-title {
+  font-size: 1rem;
+  color: rgb(7, 0, 100);
 }
 
 /* Technical Skills */
@@ -426,51 +553,31 @@ section {
   padding-top: 12vh;
 }
 
-.skill-containers {
-  /* gap: 1.5rem; */
+.skills-container {
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.title_1 {
-  font-weight: 600;
-  font-size: 1.05rem;
-  padding-left: 30px;
-  color: rgb(64, 64, 64);
-}
-
-.skill-containers p {
-  color: rgb(85, 85, 85);
-  font-weight: 400;
-  font-size: 1rem;
-  padding-left: 15px;
-}
-
-.experience-details-container {
-  display: flex;
-  justify-content: center;
   flex-direction: column;
+  gap: 0.8rem;
+  padding-left: 15px;
+  padding-top: 10px;
 }
 
-.article-container {
+.skill {
   display: flex;
-  text-align: initial;
-  flex-wrap: wrap;
-  flex-direction: row;
-  gap: 2.5rem;
-  justify-content: space-around;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
-article {
-  display: flex;
-  width: 10rem;
-  justify-content: space-around;
-  gap: 0.5rem;
+.skill-name {
+  font-weight: bold;
+  font-size: 1rem;
+  min-width: 200px; /* Để căn chỉnh thời gian thẳng hàng */
+  color: rgb(64, 64, 64);
+  text-align: left;
 }
 
-article .icon {
-  cursor: default;
+.skill-title {
+  font-size: 1rem;
+  color: rgb(7, 0, 100);
 }
 
 /* PROJECTS SECTION */
@@ -481,10 +588,10 @@ article .icon {
 
 .slider-container {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   position: relative;
   overflow: hidden; /* Ẩn các project không được hiển thị */
-  width: 80%;
+  /* width: 80%; */
   margin: 0 auto;
   padding-top: 10px;
 }
@@ -498,14 +605,15 @@ article .icon {
 }
 
 .project-img {
-  border-radius: 2rem;
-  width: 50%;
+  border-radius: 1rem;
+  width: 80%;
   height: auto;
 }
 
 .project-title {
   margin: 1rem;
   color: black;
+  font-size: 1.5rem;
 }
 
 .project-btn {
@@ -516,7 +624,7 @@ article .icon {
 .prev-btn,
 .next-btn {
   position: absolute;
-  top: 37%;
+  top: 38%;
   transform: translateY(-50%);
   border: none;
   font-size: 1.5rem;
@@ -524,33 +632,31 @@ article .icon {
   width: 50px;
   margin-right: 2rem;
   margin-left: 2rem;
-  border-radius: 1rem;
+  border-radius: 50%;
   cursor: pointer;
   z-index: 10;
 }
 
 .prev-btn {
-  border-color: rgb(163, 163, 163);
   background-color: rgba(0, 0, 0, 0);
   left: -2rem;
 }
 
 .next-btn {
-  border-color: rgb(163, 163, 163);
   background-color: rgba(0, 0, 0, 0);
   right: -2rem;
 }
 
 .prev-btn:hover,
 .next-btn:hover {
-  background: rgb(53, 53, 53);
+  background: rgb(141, 141, 141);
   color: white;
 }
 
 /* FOOTER SECTION */
 
 footer {
-  padding-top: 8vh;
+  padding-top: 18vh;
   padding-bottom: 5px;
 }
 

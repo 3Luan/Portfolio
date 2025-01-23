@@ -50,6 +50,10 @@
   #desktop-nav {
     padding-right: 100px;
   }
+
+  .project-title {
+    font-size: 1.2rem;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -69,6 +73,22 @@
 
   #hamburger-nav {
     display: flex;
+  }
+
+  /* Responsive Design */
+  #desktop-nav {
+    display: none;
+  }
+
+  #hamburger-nav {
+    display: block;
+  }
+
+  .nav__hamburger {
+    display: flex;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
   }
 
   article {
@@ -116,7 +136,7 @@
 
   .section__pic-container {
     display: flex;
-    height: 200px;
+    height: 380px;
     width: 200px;
     margin: 0 auto 10px;
   }
@@ -139,9 +159,29 @@
   .name {
     font-size: 1.6rem;
     text-align: center;
+    padding-top: 1vh;
+    padding-bottom: 5px;
   }
 
   .text-container {
     text-align: justify;
+  }
+
+  /* Project */
+  .project-img {
+    border-radius: 1rem;
+    width: 80%;
+    height: auto;
+  }
+
+  .prev-btn,
+  .next-btn {
+    /* top: 30%; */
+    margin-right: 0.85rem;
+    margin-left: 0.85rem;
+  }
+
+  .project-title {
+    font-size: 1rem;
   }
 }
