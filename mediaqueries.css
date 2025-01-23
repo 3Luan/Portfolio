@@ -129,23 +129,28 @@
     text-align: center;
   }
 
-  #profile,
+  #about,
   .section-container {
     display: block;
   }
 
   .section__pic-container {
     display: flex;
-    height: 380px;
-    width: 200px;
+    height: 100px;
+    width: 285px;
     margin: 0 auto 10px;
   }
 
+  .section__pic-container {
+    display: flex;
+    flex-direction: column; /* Sắp xếp theo chiều dọc */
+    align-items: center; /* Căn giữa nội dung theo chiều ngang */
+    margin-bottom: 200px;
+  }
+
   .section__pic-container img {
-    min-width: 200px;
-    min-height: 200px;
-    border-radius: 2rem;
-    object-fit: cover;
+    width: 200px; /* Đặt chiều rộng cho ảnh */
+    height: 320px; /* Đặt chiều cao cho ảnh */
   }
 
   .section__text__p2 {
@@ -159,7 +164,7 @@
   .name {
     font-size: 1.6rem;
     text-align: center;
-    padding-top: 1vh;
+    padding-top: 5vh;
     padding-bottom: 5px;
   }
 
@@ -183,5 +188,9 @@
 
   .project-title {
     font-size: 1rem;
+  }
+
+  .skill-name {
+    min-width: 150px; /* Để căn chỉnh thời gian thẳng hàng */
   }
 }

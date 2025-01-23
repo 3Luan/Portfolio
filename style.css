@@ -345,7 +345,7 @@ section {
 
 /* PROFILE SECTION */
 
-#profile {
+#about {
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -357,21 +357,17 @@ section {
 }
 
 .section__pic-container {
-  min-width: 285px;
-  min-height: 300px;
   display: flex;
   flex-direction: column; /* Sắp xếp theo chiều dọc */
   align-items: center; /* Căn giữa nội dung theo chiều ngang */
-  width: 285px;
-  height: 300px;
-  margin-bottom: 10vh;
+  /* margin-bottom: 10vh; */
 }
 
 .section__pic-container img {
-  height: 100%;
-  width: 100%;
-  border-radius: 2rem;
-  object-fit: cover;
+  width: 285px; /* Đặt chiều rộng cho ảnh */
+  height: 300px; /* Đặt chiều cao cho ảnh */
+  border-radius: 2rem; /* Giữ bo góc */
+  object-fit: cover; /* Đảm bảo ảnh không bị méo và giữ đúng tỉ lệ */
 }
 
 .section__text p {
@@ -459,60 +455,6 @@ section {
   gap: 1rem;
 }
 
-/* ABOUT SECTION */
-
-#about {
-  position: relative;
-  padding-top: 25vh;
-}
-
-.about-containers {
-  gap: 2rem;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-}
-
-.about-details-container {
-  /* justify-content: center; */
-  flex-direction: column;
-}
-
-.about-containers,
-.about-details-container {
-  display: flex;
-}
-
-.about-pic {
-  border-radius: 2rem;
-}
-
-.arrow {
-  position: absolute;
-  right: -5rem;
-  bottom: 2.5rem;
-}
-
-.details-container {
-  padding: 1.5rem;
-  flex: 1;
-  background: white;
-  border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
-  text-align: center;
-}
-
-.section-container {
-  gap: 4rem;
-  height: 80%;
-}
-
-.title {
-  font-size: 1.5rem;
-  border-bottom: 2px solid rgba(51, 51, 51, 0.16);
-  padding-bottom: 5px;
-}
-
 /* Activities */
 
 #activities {
@@ -564,7 +506,6 @@ section {
 .skill {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
 }
 
 .skill-name {
